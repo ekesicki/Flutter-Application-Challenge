@@ -63,6 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _buttonisClicked() {
+    setState(() {
+      print("Button Pressed!");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -74,17 +80,35 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         // This body will contain rows for the
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Text(
+              "What's your name?",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, height: 5, fontSize: 30.0),
+            ),
             Text(
               'First Name',
             ),
             Expanded(
-              child: TextField(
-                decoration: InputDecoration(
-                    border: InputBorder.none, hintText: 'First Name'),
-              ),
+              child: TextField(),
+            ),
+            Text(
+              'Last Name',
+            ),
+            Expanded(
+              child: TextField(),
+            ),
+            RaisedButton(
+              onPressed: _buttonisClicked,
+              color: Colors.purple,
+              textColor: Colors.white,
+              elevation: 10.0,
+              highlightElevation: 10.0,
+              child: Text('Continue'),
             ),
           ],
         ),
