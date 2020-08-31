@@ -1,8 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase/firebase.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +18,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+//final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -51,9 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // Create a map of data from the two text fields to send to the collection reference
     // test data for now
 
-    CollectionReference usersReference = Firestore.instance.collection('users');
-    print(usersReference);
-    usersReference.add(testData);
+    // CollectionReference usersReference = Firestore.instance.collection('users');
+    // print(usersReference);
+    // usersReference.add(testData);
     setState(() {
       print("Button Pressed!");
     });
